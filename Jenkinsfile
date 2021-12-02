@@ -18,5 +18,11 @@ pipeline {
       }
     }
 
+    stage('rmdir') {
+      steps {
+        sh 'sudo rmdir test'
+      }
+    }
+
   }
 }
