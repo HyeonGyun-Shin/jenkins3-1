@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('install') {
       steps {
-        sh 'sudo yum install -y yum-utils'
+        sh 'sudo yum install -y dhcp'
       }
     }
 
