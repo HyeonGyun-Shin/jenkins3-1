@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('install') {
-      steps {
-        sh 'sudo yum install -y dhcp'
+      parallel {
+        stage('install') {
+          steps {
+            sh 'sudo yum install -y dhcp'
+          }
+        }
+
+        stage('mkdir') {
+          steps {
+            sh 'sudo mkdir test'
+          }
+        }
+
       }
     }
 
